@@ -1,5 +1,5 @@
 <p align=center>
-  <img src="https://github.com/Jukelyn/BetterCal/blob/main/assets/bettercal_banner.png" alt="banner">
+  <img src="https://github.com/Jukelyn/BetterCal/blob/main/src/public/assets/bettercal_banner.png" alt="banner">
 </p>
 
 # BetterCal
