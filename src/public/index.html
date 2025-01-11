@@ -24,23 +24,21 @@
       sizes="16x16"
     />
     <link href="css/styles.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var calendarEl = document.getElementById("calendar");
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: "dayGridMonth",
-        });
-        calendar.render();
-      });
-    </script>
+    <link href="css/colors.css" rel="stylesheet" />
   </head>
   <body>
+    <button id="modeToggle">Toggle Dark Mode</button>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/calendar.js"></script>
+
     <div id="calendar"></div>
+
+    <div id="dropdownMenu">
+      <button id="monthView">Month View</button>
+      <button id="weekView">Week View</button>
+      <button id="dayView">Day View</button>
+      <button id="listView">List View</button>
+    </div>
   </body>
 </html>
