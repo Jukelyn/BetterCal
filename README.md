@@ -3,4 +3,10 @@
 </p>
 
 # BetterCal
+
 Short description TBA
+
+## Development
+
+To run a local http server for testing:
+`npx http-server src/`
