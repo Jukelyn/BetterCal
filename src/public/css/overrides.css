@@ -8,6 +8,9 @@
     opacity: 100;
 }
 
-.fc .fc-toolbar-title {
+.fc .fc-toolbar-title,
+.fc .fc-col-header-cell,
+.fc .fc-timegrid-slot-label,
+.fc .fc-timegrid-axis-cushion {
     color: var(--fc-neutral-text-color);
 }

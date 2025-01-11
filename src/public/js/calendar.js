@@ -19,21 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
           text: "View Options",
           click: toggleDropdown,
         },
-        toggleThemeButton: {
-          click: toggleTheme,
-        },
       },
       headerToolbar: {
         left: "prevYear,prev,next,nextYear",
         center: "title",
-        right: "today dropdownButton toggleThemeButton",
+        right: "today dropdownButton",
       },
       buttonIcons: {
         prev: "chevron-left",
         next: "chevron-right",
         prevYear: "chevrons-left",
         nextYear: "chevrons-right",
-        toggleThemeButton: "moon",
       },
       buttonText: {
         today: "Today",
@@ -74,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dropdownButton && dropdownMenu) {
       const rect = dropdownButton.getBoundingClientRect();
       const menuRect = dropdownMenu.getBoundingClientRect();
-      var offset = (rect.width + menuRect.width) / 2
+      var offset = (rect.width + menuRect.width) / 2;
       dropdownMenu.style.position = "absolute";
       dropdownMenu.style.top = `${rect.bottom}px`;
       dropdownMenu.style.left = `${rect.left - offset - menuRect.left}px`;

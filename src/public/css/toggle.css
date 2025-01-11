@@ -3,6 +3,7 @@
     width: 50px;
     padding: 0;
     border-radius: 50%;
+    border: 2px solid var(--fc-button-bg-color);
     background-color: var(--fc-button-bg-color);
     display: flex;
     justify-content: center;
