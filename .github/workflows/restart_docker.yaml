@@ -20,7 +20,7 @@ jobs:
         
       - name: Restart Docker container
         run: |
-          ssh -i /tmp/private_key.pem -o StrictHostKeyChecking=no -p ${{ secrets.SSH_SERVER_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }} 'docker restart <container_name>'
+          ssh -i /tmp/private_key.pem -o StrictHostKeyChecking=no -p ${{ secrets.SSH_SERVER_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }} 'docker restart bettercal_nginx'
         
       - name: Clean up SSH private key
         run: |
