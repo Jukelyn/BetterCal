@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const toggleTheme = () => {
     const rootElement = document.documentElement; // or document.body
-    const isDarkMode = rootElement.classList.toggle("dark-mode");
+    const isDarkMode = rootElement.classList.toggle("darkmode");
     localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
     const toggleThemeButton = document.querySelector(
       ".fc-toggleThemeButton-button"
