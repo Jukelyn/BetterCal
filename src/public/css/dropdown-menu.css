@@ -1,0 +1,29 @@
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    color: var(--fc-button-text-color);
+    background: var(--fc-button-bg-color);
+    border: 1px solid var(--fc-page-bg-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 100;
+    border-radius: 50px;
+}
+
+/* Buttons inside the dropdown menu */
+#dropdownMenu button {
+    display: block;
+    color: var(--fc-button-text-color);
+    width: 100%;
+    top: inherit;
+    left: auto;
+    padding: 4px 12px;
+    margin: 5px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#dropdownMenu button:hover {
+    background: var(--fc-button-hover-bg-color);
+}

@@ -1,17 +1,17 @@
 :root {
     --fc-small-font-size: .85em;
-    --fc-page-bg-color: #fff;
+    --fc-page-bg-color: #d5dbdc;
     --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
-    --fc-neutral-text-color: #808080;
-    --fc-border-color: #ddd;
+    --fc-neutral-text-color: #171d1e;
+    --fc-border-color: #2b3133;
 
     --fc-button-text-color: #fff;
-    --fc-button-bg-color: #2C3E50;
-    --fc-button-border-color: #2C3E50;
+    --fc-button-bg-color: #4a6267;
+    --fc-button-border-color: #4a6267;
     --fc-button-hover-bg-color: #1e2b37;
-    --fc-button-hover-border-color: #1a252f;
-    --fc-button-active-bg-color: #1a252f;
-    --fc-button-active-border-color: #151e27;
+    --fc-button-hover-border-color: #1e2b37;
+    --fc-button-active-bg-color: #1e2b37;
+    --fc-button-active-border-color: #1e2b37;
 
     --fc-event-bg-color: #3788d8;
     --fc-event-border-color: #3788d8;
@@ -34,5 +34,9 @@
 }
 
 .dark-mode {
-    --fc-page-bg-color: #212121;
+    --fc-page-bg-color: #0e1415;
+    --fc-neutral-text-color: #006874;
+    --fc-button-bg-color: #b1cbd0;
+    --fc-button-text-color: #1c3438;
+    --fc-neutral-bg-color: #D0D0D0;
 }

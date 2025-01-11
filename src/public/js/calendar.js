@@ -19,17 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
           text: "View Options",
           click: toggleDropdown,
         },
+        toggleThemeButton: {
+          click: toggleTheme,
+        },
       },
       headerToolbar: {
         left: "prevYear,prev,next,nextYear",
         center: "title",
-        right: "today dropdownButton",
+        right: "today dropdownButton toggleThemeButton",
       },
       buttonIcons: {
         prev: "chevron-left",
         next: "chevron-right",
         prevYear: "chevrons-left",
         nextYear: "chevrons-right",
+        toggleThemeButton: "moon",
       },
       buttonText: {
         today: "Today",
@@ -41,28 +45,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  const toggleThemeButton = document.querySelector(
+    ".fc-toggleThemeButton-button"
+  );
+
+  if (toggleThemeButton) {
+    toggleThemeButton.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+
+  const toggleTheme = () => {
+    const rootElement = document.documentElement; // or document.body
+    const isDarkMode = rootElement.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+    const toggleThemeButton = document.querySelector(
+      ".fc-toggleThemeButton-button"
+    );
+
+    // Update the button icon
+    toggleThemeButton.innerHTML = isDarkMode
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  };
+
   const toggleDropdown = () => {
     const dropdownButton = document.querySelector(".fc-dropdownButton-button");
     const dropdownMenu = document.getElementById("dropdownMenu");
 
     if (dropdownButton && dropdownMenu) {
       const rect = dropdownButton.getBoundingClientRect();
+      const menuRect = dropdownMenu.getBoundingClientRect();
+      var offset = (rect.width + menuRect.width) / 2
       dropdownMenu.style.position = "absolute";
       dropdownMenu.style.top = `${rect.bottom}px`;
-      dropdownMenu.style.left = `${rect.left}px`;
+      dropdownMenu.style.left = `${rect.left - offset - menuRect.left}px`;
       dropdownMenu.style.display =
         dropdownMenu.style.display === "block" ? "none" : "block";
 
-      document.addEventListener("click", function (event) {
+      const handleClickOutside = (event) => {
         if (
           !dropdownButton.contains(event.target) &&
           !dropdownMenu.contains(event.target)
         ) {
           dropdownMenu.style.display = "none";
+          document.removeEventListener("click", handleClickOutside);
         }
-      });
+      };
+
+      document.addEventListener("click", handleClickOutside);
     }
   };
+
   const setupDropdownEventListeners = (calendar) => {
     document.getElementById("monthView").addEventListener("click", function () {
       changeCalendarView(calendar, "dayGridMonth");
