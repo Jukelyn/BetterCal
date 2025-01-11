@@ -25,4 +25,4 @@ jobs:
           remote_path: ${{ secrets.REMOTE_PATH }} # On server
           
           # sftp args
-          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no -v'
